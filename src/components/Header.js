@@ -1,5 +1,6 @@
 // using ES7 snippets extension, rafce
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Header = ({title}) => {
     return (
@@ -9,8 +10,12 @@ const Header = ({title}) => {
     )
 }
 
-Header.defaultProps ={
+Header.defaultProps = {
     title: 'Task Tracker',
+}
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
 }
 
 export default Header
