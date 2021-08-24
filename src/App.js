@@ -9,13 +9,34 @@ function App() {
         text: 'Doctors Appointment',
         day: 'Monday',
         reminder: true
-    }
+    },
+    {
+      id: 2,
+      text: 'Doctors Appointment',
+      day: 'Monday',
+      reminder: true
+  },
+  {
+    id: 3,
+    text: 'Doctors Appointment',
+    day: 'Monday',
+    reminder: true
+}
 ])
+
+// Delete task
+const deleteTask = (id) => {
+  setTasks(tasks.filter((task) => task.id !== id))
+}
 
   return (
     <div className='container'>
       <Header />
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? (
+      <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        'No Tasks to Show'
+      )}
     </div>
   )
 }
