@@ -1,17 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
-
-const Tasks = () => {
-    const [tasks, setTasks] = useState ([
-        {
-            id: 1,
-            text: 'Doctors Appointment',
-            day: 'Monday',
-            reminder: true
-        }
-    ])
 
 
+const Tasks = ({ tasks }) => {
     return (
         <>
         {tasks.map((task) => (
