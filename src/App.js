@@ -12,15 +12,15 @@ function App() {
     },
     {
       id: 2,
-      text: 'Doctors Appointment',
-      day: 'Monday',
+      text: 'Grocery shopping',
+      day: 'Wednesday',
       reminder: true
   },
   {
     id: 3,
-    text: 'Doctors Appointment',
-    day: 'Monday',
-    reminder: true
+    text: 'Wash Dishes',
+    day: 'Friday',
+    reminder: false
 }
 ])
 
@@ -31,7 +31,8 @@ const deleteTask = (id) => {
 
 // Toggle Reminder
 const toggleReminder = (id) => {
-  console.log(id)
+  setTasks(tasks.map((task) => task.id === id
+  ? { ...task, reminder: !task.reminder } : task))
 
 }
 
